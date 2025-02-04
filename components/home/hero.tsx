@@ -13,7 +13,7 @@ export default function Hero() {
       alignItems="center"
       position="relative"
       //padding="160px 80px 80px 80px"
-      padding="20% 10% 10% 10%"
+      padding={{base: "20% 10% 50% 10%", medium: "20% 10% 10% 10%"}}
       //backgroundColor={"#00a400"}
       backgroundImage="url('/home_hero.jfif')" // set your image path here
       style={{ 
@@ -49,7 +49,7 @@ export default function Hero() {
             // fontFamily="Roboto, sans-serif"
             //fontSize="54px"
             
-            fontSize={{base: "12px", small: "16px", medium: "32", large: "54px"}}
+            fontSize={{base: "24px", small: "28px", medium: "28", large: "54px"}}
             // sizes = {[
             //   [0, "24px"],
             //   [640, "28px"],
@@ -72,7 +72,7 @@ export default function Hero() {
           </Text>
           <Text
             //fontFamily="Roboto"
-            fontSize="42px"
+            fontSize={{base: "16px", small: "16px", medium: "16", large: "42px"}}
             fontWeight="700"
             color="rgba(242,244,248,1)"
             lineHeight="46.2px"
