@@ -1,6 +1,6 @@
 import { Flex, Icon, Text } from "@aws-amplify/ui-react";
 import Image from 'next/image'
-import { Review } from "./testimonials";
+import { Review } from "@/components/home/testimonials";
 
 const defaultContent = "Malesuada facilisi libero, nam eu. Quis pellentesque tortor a elementum ut blandit sed pellentesque arcu. Malesuada in faucibus risus velit diam. Non, massa ut a arcu, fermentum, vel interdum."
 
