@@ -7,13 +7,13 @@ export default function Hero() {
       gap="80px"
       direction="row"
       width="100%"
-      maxWidth="1440px"
+      //maxWidth="1440px"
       margin="0 0"
       justifyContent="flex-start"
       alignItems="center"
       position="relative"
       //padding="160px 80px 80px 80px"
-      padding={{base: "20% 10% 50% 10%", medium: "20% 10% 10% 10%"}}
+      padding={{base: "20% 10% 50% 10%", small: "20% 10% 50% 10%", medium: "7% 10% 7% 10%"}}
       //backgroundColor={"#00a400"}
       backgroundImage="url('/home_hero.jfif')" // set your image path here
       style={{ 
@@ -28,7 +28,7 @@ export default function Hero() {
         gap="48px"
         direction="column"
         width="100%"
-        maxWidth="1280px"
+        //maxWidth="1280px"
         justifyContent="flex-start"
         alignItems="flex-start"
         shrink="0"
@@ -49,7 +49,7 @@ export default function Hero() {
             // fontFamily="Roboto, sans-serif"
             //fontSize="54px"
             
-            fontSize={{base: "24px", small: "28px", medium: "28", large: "54px"}}
+            fontSize={{base: "24px", small: "28px", medium: "28px", large: "54px"}}
             // sizes = {[
             //   [0, "24px"],
             //   [640, "28px"],
@@ -60,6 +60,7 @@ export default function Hero() {
             // }
             fontWeight="700"
             color="rgba(255,255,255,1)"
+            lineHeight={{base: "30px", small: "30px", medium: "30px", large: "59.4px"}}
             //lineHeight="59.4px"
             textAlign="center"
             display="block"

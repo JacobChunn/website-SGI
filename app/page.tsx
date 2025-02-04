@@ -56,13 +56,13 @@ export default function App() {
   // );
   return (
     <main>
-      {/* <Header/> */}
+      <Header/>
       <Hero/>
-      {/* <WhatWeCanDo/>
+      <WhatWeCanDo/>
       <Testimonials/>
       <Quote/>
       <Questions/>
-      <Footer/> */}
+      <Footer/>
     </main>
   );
 }

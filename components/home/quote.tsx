@@ -7,13 +7,14 @@ export default function Quote() {
     gap="48px"
     direction="column"
     width="100%"
-    maxWidth="1440px"
+    //maxWidth="1440px"
     justifyContent="flex-start"
     alignItems="center"
     position="relative"
-    padding="80px 80px 80px 80px"
+    padding={{base: "80px 20px 80px 20px", small: "80px 0px 80px 0px", medium: "80px 80px 80px 80px"}}
     backgroundColor="rgba(255,255,255,1)"
   >
+    {/* Title */}
     <Flex
       gap="48px"
       direction="column"
@@ -69,8 +70,8 @@ export default function Quote() {
     <Flex
       gap="16px"
       direction="column"
-      height="619px"
-      width="450px"
+      //height="619px"
+      width={{base: "300px", small: "450px"}}
       justifyContent="flex-start"
       alignItems="stretch"
       shrink="0"

@@ -13,20 +13,21 @@ export default function Footer() {
     justifyContent="center"
     alignItems="flex-start"
     position="relative"
-    padding="48px 80px 48px 80px"
+    padding={{base: "48px 20px 48px 10px", small: "48px 20px 48px 20px", medium: "48px 80px 48px 80px"}}
     backgroundImage="linear-gradient(180deg, rgba(77,83,88,1), rgba(153,153,153,1))"
   >
     {/* Top Section | Contact Us */}
     <Flex
-      gap="48px"
-      direction="row"
+      gap="24px"
       justifyContent="flex-start"
       alignItems="center"
       shrink="0"
       alignSelf="stretch"
       position="relative"
+      direction={{base:"column", small:"column", medium:"column", large:"column", xl:"row"}}
+      padding="20px"
     >
-      <Flex
+      {/* <Flex
         gap="16px"
         direction="row"
         justifyContent="flex-end"
@@ -35,45 +36,67 @@ export default function Footer() {
         shrink="1"
         basis="0"
         position="relative"
-      >
+      > */}
+        {/* Contact Text Container */}
         <Flex
-          height="139px"
-          overflow="hidden"
+          //height="139px"
+          //overflow="hidden"
           grow="1"
           shrink="1"
           basis="0"
           position="relative"
+          direction="column"
+          gap="0px"
         >
+          <Text
+            fontSize="42px"
+            fontWeight="700"
+            color="rgba(255,255,255,1)"
+            //lineHeight="46.20000076293945px"
+            textAlign={{base:"center", small:"center", medium:"center", large:"center", xl:"left"}}
+            display="block"
+            //width="817px"
+            //height="52px"
+            //position="absolute"
+            // top="36px"
+            // left="14px"
+            // whiteSpace="pre-wrap"
+            alignSelf="start"
+          >
+            Still Have Questions? We're here to help!
+          </Text>
           <Text
             //fontFamily="Roboto"
             fontSize="20px"
             fontWeight="400"
             color="rgba(255,255,255,1)"
-            lineHeight="22px"
-            textAlign="left"
+            //lineHeight="22px"
+            textAlign={{base:"center", small:"center", medium:"center", large:"center", xl:"left"}}
             display="block"
-            width="329px"
-            height="30px"
-            position="absolute"
-            top="88px"
-            left="14px"
-            whiteSpace="pre-wrap"
+            //width="329px"
+            //height="30px"
+            //position="absolute"
+            //top="88px"
+            //left="14px"
+            //whiteSpace="pre-wrap"
           >
             Let's Schedule a Time to Talk
           </Text>
-          <FooterContactText/>
         </Flex>
 
+        {/* Contact Button */}
         <Link href="/contact" passHref legacyBehavior>
           <Button
             variation="primary"
             as='a'
+            //alignSelf={{base:"center", small:"center", medium:"center", large:"center", xl:"start"}}
+            alignSelf="center"
           >
             Contact Us
           </Button>
         </Link>
 
-      </Flex>
+      {/* </Flex> */}
     </Flex>
 
     {/* Separator 1 */}
@@ -88,7 +111,7 @@ export default function Footer() {
 
     {/* Middle Section */}
     <Flex
-      direction="row"
+      direction={{base: "column", small: "row"}}
       width="100%"
       justifyContent="space-between"
       alignItems="center"
@@ -116,7 +139,7 @@ export default function Footer() {
           justifyContent="flex-start"
           alignItems="center"
           shrink="0"
-          alignSelf="stretch"
+          alignSelf="center"
           position="relative"
         >
           <Text
@@ -141,6 +164,7 @@ export default function Footer() {
           alignItems="center"
           shrink="0"
           position="relative"
+          alignSelf="center"
         >
           <Text
             //fontFamily="Roboto"
@@ -164,6 +188,7 @@ export default function Footer() {
           alignItems="center"
           shrink="0"
           position="relative"
+          alignSelf="center"
         >
           <Text
             //fontFamily="Roboto"
@@ -187,8 +212,8 @@ export default function Footer() {
           justifyContent="flex-start"
           alignItems="center"
           shrink="0"
-          alignSelf="stretch"
           position="relative"
+          alignSelf="center"
         >
           <Text
             //fontFamily="Roboto"
@@ -212,6 +237,7 @@ export default function Footer() {
           alignItems="center"
           shrink="0"
           position="relative"
+          alignSelf="center"
         >
           <Text
             //fontFamily="Roboto"
@@ -235,6 +261,7 @@ export default function Footer() {
           alignItems="center"
           shrink="0"
           position="relative"
+          alignSelf="center"
         >
           <Text
             //fontFamily="Roboto"
@@ -258,6 +285,7 @@ export default function Footer() {
           alignItems="center"
           shrink="0"
           position="relative"
+          alignSelf="center"
         >
           <Text
             //fontFamily="Roboto"
@@ -287,9 +315,10 @@ export default function Footer() {
       backgroundColor="rgba(193,199,205,1)"
     />
 
+    {/* Bottom section */}
     <Flex
       gap="48px"
-      direction="row"
+      direction={{base: "column-reverse", small: "row"}}
       justifyContent="flex-start"
       alignItems="flex-start"
       shrink="0"
@@ -302,11 +331,12 @@ export default function Footer() {
         fontWeight="400"
         color="rgba(255,255,255,1)"
         lineHeight="19.600000381469727px"
-        textAlign="left"
+        textAlign={{base: "center", small: "left"}}
         display="block"
         shrink="0"
         position="relative"
         whiteSpace="pre-wrap"
+        alignSelf="center"
       >
         Stellar Group Investments @ 2025. All rights reserved.
       </Text>
@@ -319,6 +349,7 @@ export default function Footer() {
         shrink="1"
         basis="0"
         position="relative"
+        alignSelf="center"
       >
         <Link
           href="/privacy-policy"

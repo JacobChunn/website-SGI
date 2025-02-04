@@ -4,7 +4,7 @@ import { Text } from "@aws-amplify/ui-react"
 import { useState, useEffect } from "react";
 
 const FooterContactText = () => {
-  const [isWideScreen, setIsWideScreen] = useState<boolean>(window.innerWidth > 1149);
+  const [isWideScreen, setIsWideScreen] = useState<boolean>(window.innerWidth > 1299);
 
   useEffect(() => {
     const handleResize = () => {

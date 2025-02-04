@@ -6,11 +6,11 @@ export default function Questions() {
     gap="64px"
     direction="column"
     width="100%"
-    maxWidth="1440px"
+    //maxWidth="1440px"
     justifyContent="flex-start"
     alignItems="center"
     position="relative"
-    padding="80px 80px 80px 80px"
+    padding={{base: "80px 10px 80px 10px", small: "80px 80px 80px 80px"}}
     backgroundColor="rgba(242,244,248,1)"
   >
     {/* Title */}
@@ -79,7 +79,7 @@ export default function Questions() {
           content: 'We specialize in completing repairs required by banks or FHA inspectors to ensure your closing isn’t delayed. Whether it’s windows, brickwork, or other fixes, we’ll get the job done quickly and affordably.'
         }
       ]}
-      width="900px"
+      width="100%"
     />
     {/* <Flex
       gap="16px"

@@ -12,17 +12,17 @@ export default function Header({
 
   return (
     <Flex
-      gap="24px"
+      //gap="24px"
       direction="row"
       width="100%"
-      maxWidth='1440px'
-      height="58px"
-      justifyContent="flex-start"
+      //maxWidth='1440px'
+      height={{base: "46px", medium: "58px"}}
+      justifyContent="space-between"
       alignItems="center"
       shrink="0"
       position="sticky"
       // borderBottom="1px SOLID rgba(232,236,240,1)"
-      padding="4px 79px 4px 79px"
+      padding={{base: "4px 4px 4px 4px", medium: "4px 79px 4px 79px"}}
       backgroundColor="rgba(191,25,72,1)"
       style={{ 
         borderBottom: "1px solid rgba(232,236,240,1)",
@@ -31,33 +31,22 @@ export default function Header({
       }}
     >
       {/* Logo Image */}
-      <Flex
-        gap="10px"
-        direction="column"
-        justifyContent="flex-start"
-        alignItems="flex-start"
-        grow="1"
-        shrink="1"
-        basis="0"
-        position="relative"
-      >
-        
-        <Link href="/">
-          <Image
-            width="135px"
-            height="48px"
-            display="block"
-            shrink="0"
-            position="relative"
-            objectFit="cover"
-            alt="Logo Image"
-            src='/SGI-Logo-Horiz.png'
-          />
-        </Link>
-      </Flex>
+      <Link href="/">
+        <Image
+          width={{base: "71px", medium: "95px"}}
+          height={{base: "36px", medium: "48px"}}
+          display="block"
+          shrink="0"
+          position="relative"
+          objectFit="scale-down"
+          alt="Logo Image"
+          src='/SGI-Logo-Horiz-Small.png'
+        />
+      </Link>
       
+      {/* Menu Item Container */}
       <Flex
-        gap="16px"
+        gap={{base: "4px", medium: "16px"}}
         direction="row"
         justifyContent="center"
         alignItems="center"
@@ -76,7 +65,7 @@ export default function Header({
         >
           <Text
             ////fontFamily="Roboto"
-            fontSize="16px"
+            fontSize={{base: "12px", small: "16px"}}
             fontWeight="500"
             color="rgba(255,255,255,1)"
             lineHeight="16px"
@@ -101,7 +90,7 @@ export default function Header({
         >
           <Text
             //fontFamily="Roboto"
-            fontSize="16px"
+            fontSize={{base: "12px", small: "16px"}}
             fontWeight="500"
             color="rgba(255,255,255,1)"
             lineHeight="16px"
@@ -126,7 +115,7 @@ export default function Header({
         >
           <Text
             //fontFamily="Roboto"
-            fontSize="16px"
+            fontSize={{base: "12px", small: "16px"}}
             fontWeight="500"
             color="rgba(255,255,255,1)"
             lineHeight="16px"
@@ -151,7 +140,7 @@ export default function Header({
         >
           <Text
             //fontFamily="Roboto"
-            fontSize="16px"
+            fontSize={{base: "12px", small: "16px"}}
             fontWeight="500"
             color="rgba(255,255,255,1)"
             lineHeight="16px"
