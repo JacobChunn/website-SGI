@@ -62,7 +62,7 @@ export default function WhoWeAre() {
             position="relative"
             whiteSpace="pre-wrap"
           >
-            At Stellar Group Investments, we specialize in delivering top-notch construction services to homeowners and realtors throughout Michigan. From windows and doors to kitchens, baths, and more, our team is dedicated to turning your vision into reality with fast, reliable, and affordable solutions.
+            At The Stellar Group, we specialize in delivering top-notch construction services to homeowners and realtors throughout Michigan. Proudly licensed since 1988, our team is dedicated to turning your vision into reality with fast, reliable, and affordable solutions—from upgrading windows and doors to transforming kitchens, baths, and more.
           </Text>
         </Flex>
       </Flex>

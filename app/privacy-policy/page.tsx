@@ -22,7 +22,7 @@ export default function App() {
       <Hero/>
       <PrivacyPolicySection
         title={"Information that is gathered from visitors"}
-        description={"As is common with other websites, cookie log files are stored on the web server saving details such as the visitor’s IP address, browser type, referring page and time of visit. Cookies may be used to remember visitor preferences when interacting with this website. Where registration is required, the visitor’s email and a username will be stored on the server. By using this website you consent to our use of cookie tracking to provide a better experience."}
+        description={"As is common with other websites, cookie log files are stored on the web server saving details such as the visitor\'s IP address, browser type, referring page and time of visit. Cookies may be used to remember visitor preferences when interacting with this website. Where registration is required, the visitor\'s email and a username will be stored on the server. By using this website you consent to our use of cookie tracking to provide a better experience."}
         bgCol={"light"}
       />
       <PrivacyPolicySection
@@ -37,7 +37,7 @@ export default function App() {
       />
       <PrivacyPolicySection
         title={"Google Ads"}
-        description={"Google, as a third party vendor, uses cookies to serve ads. Google’s use of the DART cookie enables it to serve ads to visitors based on their visit to sites they visit on the Internet. Website visitors may opt out of the use of the DART cookie by visiting the Google ad and content network privacy policy."}
+        description={"Google, as a third party vendor, uses cookies to serve ads. Google\'s use of the DART cookie enables it to serve ads to visitors based on their visit to sites they visit on the Internet. Website visitors may opt out of the use of the DART cookie by visiting the Google ad and content network privacy policy."}
         bgCol={"light"}
       />
       <PrivacyPolicySection

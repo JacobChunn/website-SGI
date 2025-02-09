@@ -25,7 +25,7 @@ export default function ServiceCard({ icon, title, description }: ServiceCardPro
         {icon}
       {/* </Flex> */}
       <Text
-        fontSize="32px"
+        fontSize="28px"
         fontWeight="700"
         color="rgba(33,39,42,1)"
         lineHeight="35.20000076293945px"

@@ -69,7 +69,7 @@ export default function Hero() {
             position="relative"
             whiteSpace="pre-wrap"
           >
-            About Stellar Group Investments
+            About The Stellar Group
           </Text>
           <Text
             //fontFamily="Roboto"

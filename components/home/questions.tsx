@@ -61,12 +61,12 @@ export default function Questions() {
         {
           trigger: 'Are you a licensed contractor?',
           value: 'licensed_contractor',
-          content: 'Yes! We are a licensed residential builder in the state of Michigan, qualified to handle all types of construction projects except plumbing and electrical. You can count on us for compliant and professional work.'
+          content: 'Yes! We are a licensed residential builder in the state of Michigan, qualified to handle all types of construction projects. You can count on us for compliant and professional work.'
         },
         {
           trigger: 'How quickly can you complete a project?',
           value: 'project_completion',
-          content: 'We pride ourselves on fast turnaround times, especially for urgent needs like closing-related repairs. Depending on the scope of the project, we’ll work with you to meet your deadlines without compromising quality.'
+          content: 'We pride ourselves on fast turnaround times, especially for urgent needs like closing-related repairs. Depending on the scope of the project, we\'ll work with you to meet your deadlines without compromising quality.'
         },
         {
           trigger: 'Do you offer free quotes?',
@@ -76,7 +76,17 @@ export default function Questions() {
         {
           trigger: 'What if my project involves a bank or FHA compliance issue?',
           value: 'bank_fha_compliance',
-          content: 'We specialize in completing repairs required by banks or FHA inspectors to ensure your closing isn’t delayed. Whether it’s windows, brickwork, or other fixes, we’ll get the job done quickly and affordably.'
+          content: 'We specialize in completing repairs required by banks or FHA inspectors to ensure your closing isn\'t delayed. Whether it\'s windows, brickwork, or other fixes, we\'ll get the job done quickly and affordably.'
+        },
+        {
+          trigger: 'Do you work with insurance companies for repairs following storm damage, water intrusion, fire damage, or mold issues?',
+          value: 'insurance_repairs',
+          content: 'Yes, we specialize in handling insurance claims for damages caused by storms, water, fire, and mold. Our experienced team works directly with your insurance provider to ensure that all necessary repairs are completed efficiently and to the highest standards, alleviating the stress of navigating the claims process.'
+        },
+        {
+          trigger: 'Do you offer financing options?',
+          value: 'financing',
+          content: 'We understand that managing a large construction project can be a significant investment. That\'s why we offer flexible financing solutions that allow you to pay over a series of installments, so you don\'t have to compromise on quality while staying within your budget.'
         }
       ]}
       width="100%"
@@ -335,7 +345,7 @@ export default function Questions() {
             position="relative"
             whiteSpace="pre-wrap"
           >
-            We pride ourselves on fast turnaround times, especially for urgent needs like closing-related repairs. Depending on the scope of the project, we’ll work with you to meet your deadlines without compromising quality.
+            We pride ourselves on fast turnaround times, especially for urgent needs like closing-related repairs. Depending on the scope of the project, we\'ll work with you to meet your deadlines without compromising quality.
           </Text>
         </Flex>
       </Flex>
@@ -505,7 +515,7 @@ export default function Questions() {
             position="relative"
             whiteSpace="pre-wrap"
           >
-            We specialize in completing repairs required by banks or FHA inspectors to ensure your closing isn’t delayed. Whether it’s windows, brickwork, or other fixes, we’ll get the job done quickly and affordably.
+            We specialize in completing repairs required by banks or FHA inspectors to ensure your closing isn\'t delayed. Whether it\'s windows, brickwork, or other fixes, we\'ll get the job done quickly and affordably.
           </Text>
         </Flex>
       </Flex>

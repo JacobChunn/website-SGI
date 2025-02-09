@@ -171,7 +171,7 @@ export default function Quote() {
       <CheckboxField
         label={(
           <div>
-            I agree to be contacted by Stellar Group Investments via call, email, and text. To opt out, you can reply 'stop' at any time or click the unsubscribe link in the emails. Message and data rates may apply. 
+            I agree to be contacted by The Stellar Group via call, email, and text. To opt out, you can reply 'stop' at any time or click the unsubscribe link in the emails. Message and data rates may apply. 
             <Link
               href="/privacy-policy"
               style={{

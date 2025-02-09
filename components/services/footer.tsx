@@ -153,7 +153,7 @@ export default function Footer() {
             position="relative"
             whiteSpace="pre-wrap"
           >
-            Stellar Group Investments
+            The Stellar Group
           </Text>
         </Flex>
         <Flex
@@ -337,7 +337,7 @@ export default function Footer() {
         whiteSpace="pre-wrap"
         alignSelf="center"
       >
-        Stellar Group Investments @ 2025. All rights reserved.
+        The Stellar Group @ 2025. All rights reserved.
       </Text>
       <Flex
         gap="16px"
