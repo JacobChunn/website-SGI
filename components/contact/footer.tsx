@@ -182,7 +182,7 @@ export default function Footer() {
             position="relative"
             whiteSpace="pre-wrap"
           >
-            (810)-505-5799
+            (248) 670-7076
           </Text>
         </Flex>
         <Flex
