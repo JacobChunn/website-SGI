@@ -62,7 +62,7 @@ export default function Footer() {
             // whiteSpace="pre-wrap"
             alignSelf="start"
           >
-            Still Have Questions? We're here to help!
+            Let's Bring Your Vision to Life!
           </Text>
           <Text
             //fontFamily="Roboto"
@@ -79,7 +79,7 @@ export default function Footer() {
             //left="14px"
             //whiteSpace="pre-wrap"
           >
-            Let's Schedule a Time to Talk
+            Contact Us for a Free Quote Today!
           </Text>
         </Flex>
 

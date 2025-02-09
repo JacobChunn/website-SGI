@@ -13,9 +13,9 @@ export default function Hero() {
       alignItems="center"
       position="relative"
       //padding="160px 80px 80px 80px"
-      padding={{base: "20% 10% 50% 10%", small: "20% 10% 50% 10%", medium: "7% 10% 7% 10%"}}
+      padding={{base: "20% 10% 50% 10%", small: "20% 10% 50% 10%", medium: "13% 10% 12% 10%"}}
       //backgroundColor={"#00a400"}
-      backgroundImage="url('/home/home_hero.jfif')" // set your image path here
+      backgroundImage="url('/privacy-policy/privacy-policy_hero.jpg')" // set your image path here
       style={{ 
         backgroundSize: "cover",   // pass custom CSS via style prop
         backgroundPosition: "center",
@@ -69,14 +69,14 @@ export default function Hero() {
             position="relative"
             whiteSpace="pre-wrap"
           >
-            Quick, Affordable Remodeling Solutions for Homeowners and Realtors
+            Privacy Policy
           </Text>
           <Text
             //fontFamily="Roboto"
-            fontSize={{base: "16px", small: "16px", medium: "16", large: "42px"}}
+            fontSize={{base: "16px", small: "16px", medium: "16", large: "24px"}}
             fontWeight="700"
             color="rgba(242,244,248,1)"
-            lineHeight="46.2px"
+            //lineHeight="46.2px"
             textAlign="center"
             display="block"
             shrink="0"
@@ -84,17 +84,8 @@ export default function Hero() {
             position="relative"
             whiteSpace="pre-wrap"
           >
-            Get Your FREE Quote Today!
+            We value your privacy and are committed to protecting your personal information. Read our Privacy Policy to learn how we collect, use, and safeguard your data.
           </Text>
-
-          <Link href="/contact" passHref legacyBehavior>
-            <Button
-              variation='primary'
-              as='a'
-            >
-              Get In Touch
-            </Button>
-          </Link>
 
         </Flex>
       </Flex>

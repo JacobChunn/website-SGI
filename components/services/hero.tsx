@@ -13,9 +13,9 @@ export default function Hero() {
       alignItems="center"
       position="relative"
       //padding="160px 80px 80px 80px"
-      padding={{base: "20% 10% 50% 10%", small: "20% 10% 50% 10%", medium: "7% 10% 7% 10%"}}
+      padding={{base: "20% 10% 50% 10%", small: "20% 10% 50% 10%", medium: "10% 10% 8% 10%"}}
       //backgroundColor={"#00a400"}
-      backgroundImage="url('/home/home_hero.jfif')" // set your image path here
+      backgroundImage="url('/services/services_hero.jpg')" // set your image path here
       style={{ 
         backgroundSize: "cover",   // pass custom CSS via style prop
         backgroundPosition: "center",
@@ -69,7 +69,7 @@ export default function Hero() {
             position="relative"
             whiteSpace="pre-wrap"
           >
-            Quick, Affordable Remodeling Solutions for Homeowners and Realtors
+            Comprehensive Construction Services Designed for Homeowners and Realtors
           </Text>
           <Text
             //fontFamily="Roboto"
@@ -84,7 +84,7 @@ export default function Hero() {
             position="relative"
             whiteSpace="pre-wrap"
           >
-            Get Your FREE Quote Today!
+            Quality You Can Trust, Speed You Can Rely On
           </Text>
 
           <Link href="/contact" passHref legacyBehavior>

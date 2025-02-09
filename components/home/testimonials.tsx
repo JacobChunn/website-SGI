@@ -1,6 +1,6 @@
 import { Flex, Text, Icon } from '@aws-amplify/ui-react';
 import Image from 'next/image'
-import TestimonialCard from '@/components/home/support/testimonial-card'
+import TestimonialCard from '@/components/support/testimonial-card'
 
 export interface Review {
   content?: string,
