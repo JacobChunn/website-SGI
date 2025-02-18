@@ -15,8 +15,8 @@ import Testimonials from "@/components/home/testimonials";
 import Quote from "@/components/home/quote";
 import Questions from "@/components/home/questions";
 import Footer from "@/components/home/footer";
+import { Schema } from "@/amplify/data/resource";
 
-Amplify.configure(outputs);
 
 // const client = generateClient<Schema>();
 
