@@ -13,11 +13,11 @@ body {
 }
 
 [data-amplify-theme="custom-theme"] .amplify-textfield input {
-    background-color: rgba(242,244,248,1);
+    background-color: rgba(242, 244, 248, 1);
     height: 48px;
     border-radius: 0px;
     border: none;
-    border-bottom: 1px solid rgba(193,199,205,1);
+    border-bottom: 1px solid rgba(193, 199, 205, 1);
 }
 
 [data-amplify-theme="custom-theme"] .amplify-selectfield {
@@ -26,11 +26,11 @@ body {
 }
 
 [data-amplify-theme="custom-theme"] .amplify-selectfield select {
-    background-color: rgba(242,244,248,1);
+    background-color: rgba(242, 244, 248, 1);
     height: 48px;
     border-radius: 0px;
     border: none;
-    border-bottom: 1px solid rgba(193,199,205,1);
+    border-bottom: 1px solid rgba(193, 199, 205, 1);
 
     line-height: 48px;
     padding-top: 0;
@@ -38,7 +38,7 @@ body {
 }
 
 [data-amplify-theme="custom-theme"] .amplify-selectfield select:invalid {
-    color: rgba(117,117,117,1);
+    color: rgba(117, 117, 117, 1);
 }
 
 [data-amplify-theme="custom-theme"] .amplify-textareafield {
@@ -47,20 +47,20 @@ body {
 }
 
 [data-amplify-theme="custom-theme"] .amplify-textareafield textarea {
-    background-color: rgba(242,244,248,1);
+    background-color: rgba(242, 244, 248, 1);
     height: 96px;
     border-radius: 0px;
     border: none;
-    border-bottom: 1px solid rgba(193,199,205,1);
+    border-bottom: 1px solid rgba(193, 199, 205, 1);
 
 }
 
 [data-amplify-theme="custom-theme"] .amplify-checkbox__icon {
-    background-color: rgb(153,20,57);
+    background-color: rgb(153, 20, 57);
 }
 
 [data-amplify-theme="custom-theme"] .amplify-checkbox-field {
-    background-color: rgb(153,20,57);
+    background-color: rgb(153, 20, 57);
 }
 
 [data-amplify-theme="custom-theme"] .amplify-checkbox {
@@ -82,14 +82,14 @@ body {
 }
 
 .menu-item:hover {
-    background-color: rgb(153,20,57);
-  }
-  
-.menu-item:active {
-    background-color: rgb(110,15,42);
+    background-color: rgb(153, 20, 57);
 }
-  
+
+.menu-item:active {
+    background-color: rgb(110, 15, 42);
+}
+
 .menu-item:focus {
-    background-color: rgb(153,20,57);
+    background-color: rgb(153, 20, 57);
     box-shadow: inset 0 0 0 1px black;
 }

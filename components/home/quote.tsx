@@ -2,17 +2,17 @@
 
 import { Flex, Text, View, Icon, TextField, SelectField, TextAreaField, CheckboxField, Button } from '@aws-amplify/ui-react';
 import { generateClient } from 'aws-amplify/api';
-import { Schema } from '@/amplify/data/resource'
 import Link from 'next/link';
 import { useState } from 'react';
 import { Amplify } from 'aws-amplify';
 import outputs from "@/amplify_outputs.json";
+import { contactText, ContactTextType } from '@/app/actions/contact-text';
+import "@/app/app.css"
 
 Amplify.configure(outputs, {
   ssr: true // required when using Amplify with Next.js
 });
 
-const client = generateClient<Schema>()
 
 
 
@@ -38,22 +38,102 @@ export default function Quote() {
     agreed: false,
   });
 
+  const [checkboxHasError, setCheckboxHasError] = useState<boolean>(false);
+
   const handleInputChange = (field: any) => (e: { target: any; }) => {
     const value =
       e.target.type === 'checkbox' ? e.target.checked : e.target.value;
     setFormState({ ...formState, [field]: value });
   };
 
+  const formatPhoneNumber = (digits: string): string => {
+
+    if (digits.length >= 11) {
+      return digits;
+    }
+
+    const cleaned = digits.substring(0, 10);
+    const match = cleaned.match(/^(\d{0,3})(\d{0,3})(\d{0,4})$/);
+    if (!match) return digits;
+
+    let formatted = '';
+    if (match[1]) {
+      formatted += '(' + match[1];
+      if (match[1].length === 3) {
+        formatted += ') ';
+      }
+    }
+    if (match[2]) {
+      formatted += match[2];
+      if (match[2].length === 3 && match[3]) {
+        formatted += '-';
+      }
+    }
+    if (match[3]) {
+      formatted += match[3];
+    }
+    return formatted;
+  };
+
+  const handlePhoneInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Strip out non-digit characters to update raw digits only
+    const digits = e.target.value.replace(/\D/g, '');
+    setFormState(prev => ({ ...prev, phone: digits }));
+  };
+
+  const handlePhoneKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Backspace') {
+      const input = e.target as HTMLInputElement;
+      const cursorPos = input.selectionStart;
+      // Get the formatted value for inspection
+      const formatted = formatPhoneNumber(formState.phone);
+
+      // If the character immediately before the caret is not a digit,
+      // assume it’s a formatting character and override backspace.
+      if (cursorPos && cursorPos > 0 && !/\d/.test(formatted[cursorPos - 1])) {
+        e.preventDefault();
+        // For simplicity, remove the last digit.
+        // More advanced logic could map the cursor position to the correct digit index.
+        //setRawDigits(prev => prev.slice(0, -1));
+        setFormState(prev => ({ ...prev, phone: prev.phone.slice(0, -1) }));
+        // Optionally, update the caret position if needed (using inputRef)
+      }
+    }
+  };
+
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     try {
+      // Check if terms and conditioning is checked
+      if (!formState.agreed) {
+        setCheckboxHasError(true);
+        return
+      } else {
+        setCheckboxHasError(false);
+      }
+
       console.log("SUBMITTING START")
       // Using Amplify's API to call the backend endpoint
-      const response = await client.queries.submitContact({
-        name: "Amplify",
-      })
-      console.log('Lambda response:', response);
-      // Optionally, clear the form or display a success message here
+      // const response = await client.queries.submitContact({
+      //   name: "Amplify",
+      // })
+      // console.log('Lambda response:', response);
+
+
+      const contactInfo: ContactTextType = {
+        firstname: formState.firstName,
+        lastname: formState.lastName,
+        phone: formState.phone,
+        email: formState.email,
+        role: formState.userType,
+        situation: formState.situation,
+        consentToContact: formState.agreed,
+      }
+
+      console.log("contactInfo: ", contactInfo);
+
+      const res = await contactText(contactInfo);
+
     } catch (error) {
       console.error('Error submitting contact:', error);
     }
@@ -178,10 +258,10 @@ export default function Quote() {
           height="76px"
           type="tel"
           inputMode="numeric"
-          pattern="[0-9]*"
           maxLength={15}
-          value={formState.phone}
-          onChange={handleInputChange('phone')}
+          value={formatPhoneNumber(formState.phone)}
+          onChange={handlePhoneInputChange}
+          onKeyDown={handlePhoneKeyDown}
           innerStartComponent={
             <Icon
               width="48px"
@@ -223,9 +303,9 @@ export default function Quote() {
           onChange={handleInputChange('userType')}
         >
           <option value="" disabled>Homeowner, Realtor, or other...</option>
-          <option value="homeowner">Homeowner</option>
-          <option value="realtor">Realtor</option>
-          <option value="other">Other</option>
+          <option value="Homeowner">Homeowner</option>
+          <option value="Realtor">Realtor</option>
+          <option value="Other">Other</option>
         </SelectField>
 
         {/* Tell me about your situation */}
@@ -254,6 +334,8 @@ export default function Quote() {
               </Link>
             </div>
           )}
+          hasError={checkboxHasError}
+          errorMessage="Please agree to the terms and conditions"
           name="privacy"
           value="yes"
           width="100%"
