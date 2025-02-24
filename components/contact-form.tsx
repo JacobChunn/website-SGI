@@ -128,7 +128,9 @@ export default function ContactForm({
 
       const contactSuccess = await contactText(contactInfo);
 
-      setSubmittingState( contactSuccess ? "submitted" : "error" )
+      console.log("contactSuccess: ", contactSuccess)
+
+      setSubmittingState( contactSuccess.success ? "submitted" : "error" )
 
     } catch (error) {
       console.error('Error submitting contact:', error);

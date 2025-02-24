@@ -45,7 +45,10 @@ export async function contactText({
       !response.InvalidParameters ||
       response.InvalidParameters.length != 0
     ) {
-      return false;
+      return {
+        success: false,
+        type: "1"
+      };
     }
 
     const accountSid = response.Parameters.find(
@@ -84,13 +87,24 @@ export async function contactText({
         to: to_number
       });
 
-    if (message.errorCode == null) return true;
+    if (message.errorCode == null) {
+      return {
+        success: true,
+        type: "0"
+      };
+    }
 
     console.error('Error submitting contact!-------------------------------------------');
-    return false;
+    return {
+      success: false,
+      type: "2"
+    };
 
   } catch (error) {
     console.error('Error submitting contact:', error);
-    return false;
+    return {
+      success: false,
+      type: "3"
+    };
   }
 }
