@@ -48,14 +48,6 @@ export async function contactText({
       return false;
     }
 
-    //console.log(response)
-
-    // /amplify/shared/d2q65kbq0mbybg/ACCOUNT_SID
-
-    // const accountSid = SecretValue.ssmSecure('ACCOUNT_SID');
-    // const authToken = SecretValue.ssmSecure('TWILIO_AUTH_TOKEN')
-    // const accountSid = secret('ACCOUNT_SID');
-    // const authToken = secret('TWILIO_AUTH_TOKEN');
     const accountSid = response.Parameters.find(
       param => param.Name === '/amplify/shared/d2q65kbq0mbybg/ACCOUNT_SID'
     )?.Value as string;
