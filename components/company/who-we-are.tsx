@@ -13,7 +13,7 @@ export default function WhoWeAre() {
       justifyContent="flex-start"
       alignItems="center"
       position="relative"
-      padding="80px 80px 80px 80px"
+      padding={{base: "80px 0px 80px 0px", small: "80px 0px 80px 0px", medium: "80px 10px 80px 10px", large: "80px 80px 80px 80px"}}
       backgroundColor="rgba(255,255,255,1)"
     >
       {/* Title */}

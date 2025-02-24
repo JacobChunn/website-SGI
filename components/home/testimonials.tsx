@@ -1,24 +1,80 @@
 import { Flex, Text, Icon } from '@aws-amplify/ui-react';
 import Image from 'next/image'
-import TestimonialCard from '@/components/support/testimonial-card'
+import TestimonialCard, { TestimonialCardType } from '@/components/support/testimonial-card'
+import SectionTitle from '../section-title';
+import { useState } from 'react';
 
-export interface Review {
-  content?: string,
-  author?: string,
-  pfpPath?: string,
-  pfpType?: "image" | "icon"
-}
 
-const reviews: Review[] = [
+
+const reviews: TestimonialCardType[] = [
   {
+    platform: "google",
     content: "This is a great product!",
     author: "Alice",
-    //pfpPath: "/alice.png",
-    //pfpType: "image",
+  },
+  {
+    platform: "google",
+    content: "I absolutely love it!",
+    author: "Bob",
+  },
+  {
+    platform: "google",
+    content: "Works perfectly for my needs—highly recommended.",
+    author: "Charlie",
+  },
+  {
+    platform: "google",
+  },
+  {
+    platform: "google",
+    content: "Fast shipping and excellent customer support.",
+    author: "Ethan",
+  },
+  {
+    platform: "google",
+    content: "I’m very satisfied with my purchase.",
+    author: "Fiona",
+  },
+  {
+    platform: "google",
+    content: "Worth every penny, will buy again.",
+    author: "George",
+  },
+  {
+    platform: "google",
+    content: "Exceeded my expectations in every way.",
+    author: "Hannah",
+  },
+  {
+    platform: "google",
+    content: "It arrived quickly and worked right out of the box.",
+    author: "Ivan",
+  },
+  {
+    platform: "google",
+    content: "Absolutely five stars all around!",
+    author: "Jasmine",
   },
 ]
 
+
 export default function Testimonials() {
+  const [reviewIndex, setReviewIndex] = useState<number>(0);
+
+  const rollReview = (direction: "left" | "right") => {
+    setReviewIndex((prevIndex) => {
+      const step = 2;
+      const total = reviews.length;
+      return direction === "left"
+        ? (prevIndex - step + total) % total
+        : (prevIndex + step) % total;
+    });
+  };
+
+  const firstReview = reviews[reviewIndex];
+  const secondReview = reviews[(reviewIndex + 1) % reviews.length]; // Ensures wrap-around
+
+
   return (
     <Flex
       gap="64px"
@@ -28,45 +84,13 @@ export default function Testimonials() {
       justifyContent="flex-start"
       alignItems="center"
       position="relative"
-      padding={{base: "80px 0px 80px 0px", small: "80px 0px 80px 0px", medium: "80px 10px 80px 10px", large: "80px 80px 80px 80px"}}
+      padding={{ base: "80px 0px 80px 0px", small: "80px 0px 80px 0px", medium: "80px 10px 80px 10px", large: "80px 80px 80px 80px" }}
       backgroundColor="rgba(242,244,248,1)"
     >
       {/* Title */}
-      <Flex
-        gap="48px"
-        direction="column"
-        justifyContent="flex-start"
-        alignItems="flex-start"
-        shrink="0"
-        alignSelf="stretch"
-        position="relative"
-      >
-        <Flex
-          gap="8px"
-          direction="column"
-          justifyContent="flex-start"
-          alignItems="center"
-          shrink="0"
-          alignSelf="stretch"
-          position="relative"
-        >
-          <Text
-            //fontFamily="Roboto"
-            fontSize="42px"
-            fontWeight="700"
-            color="rgba(33,39,42,1)"
-            lineHeight="46.20000076293945px"
-            textAlign="center"
-            display="block"
-            shrink="0"
-            alignSelf="stretch"
-            position="relative"
-            whiteSpace="pre-wrap"
-          >
-            See Why Clients Love Our Work
-          </Text>
-        </Flex>
-      </Flex>
+      <SectionTitle
+        title='See Why Clients Love Our Work'
+      />
 
       {/* Content container */}
       <Flex
@@ -79,36 +103,19 @@ export default function Testimonials() {
         position="relative"
       >
 
-        {/* Left Arrow */}
-        {/* <Flex
-        width="24px"
-        height="24px"
-        overflow="hidden"
-        shrink="0"
-        position="relative"
-      >
-        <Icon
-          width="7.67px"
-          height="13.31px"
-          viewBox={{"minX":0,"minY":0,"width":7.669075012207031,"height":13.314000129699707}}
-          paths={[{"d":"M 2.4137864112854004 6.644711971282959 L 7.363786220550537 11.594711303710938 C 7.45929642021656 11.686958141624928 7.535478763282299 11.797302760183811 7.587887763977051 11.919306755065918 C 7.6402967646718025 12.041310749948025 7.667883525718935 12.172530934214592 7.669037342071533 12.305310249328613 C 7.670191158424132 12.438089564442635 7.644889190793037 12.569768756628036 7.594608306884766 12.692665100097656 C 7.544327422976494 12.815561443567276 7.4700743034482 12.92721401900053 7.376181602478027 13.021106719970703 C 7.2822889015078545 13.114999420940876 7.170636802911758 13.18925254046917 7.047740459442139 13.239533424377441 C 6.924844115972519 13.289814308285713 6.793164446949959 13.31511579907965 6.6603851318359375 13.31396198272705 C 6.527605816721916 13.312808166374452 6.396386109292507 13.285221882164478 6.2743821144104 13.232812881469727 C 6.152378119528294 13.180403880774975 6.04203350096941 13.104222014546394 5.94978666305542 13.008711814880371 L 0.2927864193916321 7.351711750030518 C 0.10531535744667053 7.164184063673019 5.551115123125783e-17 6.909876137971878 0 6.644711971282959 C 5.551115123125783e-17 6.37954780459404 0.10531535744667053 6.125239878892899 0.2927864193916321 5.9377121925354 L 5.94978666305542 0.2807117998600006 C 6.138388827443123 0.09855373203754425 6.390990972518921 -0.0022406165844586212 6.6531877517700195 0.00003780262704822235 C 6.915384531021118 0.002316221838555066 7.166196823120117 0.10748514533042908 7.35160493850708 0.29289326071739197 C 7.537013053894043 0.47830137610435486 7.642182258889079 0.7291139364242554 7.644460678100586 0.991310715675354 C 7.646739097312093 1.2535074949264526 7.5459442883729935 1.5061096400022507 7.363786220550537 1.6947118043899536 L 2.4137864112854004 6.644711971282959 Z","fillRule":"nonzero"},{"d":"M2.41379 6.64471 L7.36379 11.5947 C7.4593 11.687 7.53548 11.7973 7.58789 11.9193 C7.6403 12.0413 7.66788 12.1725 7.66904 12.3053 C7.67019 12.4381 7.64489 12.5698 7.59461 12.6927 C7.54433 12.8156 7.47007 12.9272 7.37618 13.0211 C7.28229 13.115 7.17064 13.1893 7.04774 13.2395 C6.92484 13.2898 6.79316 13.3151 6.66039 13.314 C6.52761 13.3128 6.39639 13.2852 6.27438 13.2328 C6.15238 13.1804 6.04203 13.1042 5.94979 13.0087 L0.292786 7.35171 C0.105315 7.16418 5.55112e-17 6.90988 0 6.64471 C5.55112e-17 6.37955 0.105315 6.12524 0.292786 5.93771 L5.94979 0.280712 C6.13839 0.0985537 6.39099 -0.00224062 6.65319 3.78026e-05 C6.91538 0.00231622 7.1662 0.107485 7.3516 0.292893 C7.53701 0.478301 7.64218 0.729114 7.64446 0.991311 C7.64674 1.25351 7.54594 1.50611 7.36379 1.69471 L2.41379 6.64471 Z","fill":"rgba(33,39,42,1)","fillRule":"nonzero"}]}
-          display="block"
-          position="absolute"
-          top="22.31%"
-          bottom="22.21%"
-          left="34.76%"
-          right="33.28%"
-        />
-      </Flex> */}
-
         {/* Cards container */}
         <Flex
           direction={{ base: "column", small: "column", medium: "column", large: "row" }}
-          //gap="0px"
+          width="100%"
+        //gap="0px"
         >
 
           {/* Card 1 */}
-          <Flex gap="0px">
+          <Flex
+            gap="0px"
+            width="100%"
+            height="350px"
+          >
 
             {/* Left Arrow 1*/}
             <Flex
@@ -119,6 +126,7 @@ export default function Testimonials() {
               position="relative"
               justifyContent="center"
               alignSelf="center"
+              onClick={() => rollReview("left")}
             >
               <Icon
                 width="7.67px"
@@ -137,10 +145,9 @@ export default function Testimonials() {
 
             {/* Left Box */}
             <TestimonialCard
-              platform={'google'}
-              review={{
-
-              }}
+              platform={firstReview.platform}
+              content={firstReview.content}
+              author={firstReview.author}
             />
 
             {/* Right Arrow 1 */}
@@ -153,6 +160,7 @@ export default function Testimonials() {
               justifyContent="center"
               alignSelf="center"
               display={{ large: "none" }}
+              onClick={() => rollReview("right")}
             >
               <Icon
                 width="7.64px"
@@ -172,7 +180,11 @@ export default function Testimonials() {
           </Flex>
 
           {/* Card 2 */}
-          <Flex gap="0px">
+          <Flex
+            gap="0px"
+            width="100%"
+            height="350px"
+          >
 
             {/* Left Arrow 2*/}
             <Flex
@@ -184,6 +196,7 @@ export default function Testimonials() {
               justifyContent="center"
               alignSelf="center"
               display={{ large: "none" }}
+              onClick={() => rollReview("left")}
             >
               <Icon
                 width="7.67px"
@@ -202,9 +215,9 @@ export default function Testimonials() {
 
             {/* Right  Box */}
             <TestimonialCard
-              platform={'google'}
-              review={{
-              }}
+              platform={secondReview.platform}
+              content={secondReview.content}
+              author={secondReview.author}
             />
 
             {/* Right Arrow 2 */}
@@ -216,6 +229,7 @@ export default function Testimonials() {
               position="relative"
               justifyContent="center"
               alignSelf="center"
+              onClick={() => rollReview("right")}
             >
               <Icon
                 width="7.64px"

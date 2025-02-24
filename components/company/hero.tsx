@@ -76,7 +76,7 @@ export default function Hero() {
             fontSize={{base: "16px", small: "16px", medium: "16", large: "42px"}}
             fontWeight="700"
             color="rgba(242,244,248,1)"
-            lineHeight="46.2px"
+            //lineHeight="46.2px"
             textAlign="center"
             display="block"
             shrink="0"

@@ -1,13 +1,17 @@
 import { Flex, Icon, Text } from "@aws-amplify/ui-react";
 import Image from 'next/image'
-import { Review } from "@/components/home/testimonials";
 
 const defaultContent = "Malesuada facilisi libero, nam eu. Quis pellentesque tortor a elementum ut blandit sed pellentesque arcu. Malesuada in faucibus risus velit diam. Non, massa ut a arcu, fermentum, vel interdum."
 
 
-interface TestimonialCardInterface {
-  platform: "google"
-  review: Review
+export type Platform = "google"
+
+export type TestimonialCardType = {
+  platform: Platform
+  content?: string,
+  author?: string,
+  pfpPath?: string,
+  pfpType?: "image" | "icon"
 }
 
 const googleIcon = (
@@ -19,14 +23,16 @@ const googleIcon = (
   />
 );
 
-const platformIcons: Record<TestimonialCardInterface["platform"], React.ReactNode> = {
+const platformIcons: Record<TestimonialCardType["platform"], React.ReactNode> = {
   google: googleIcon
 }
 
 export default function TestimonialCard({
   platform,
-  review: {content = defaultContent, author = "Author Name", pfpPath = "/person-icon.svg"}
-}: TestimonialCardInterface) {
+  content = defaultContent,
+  author = "Author Name",
+  pfpPath = "/person-icon.svg"
+}: TestimonialCardType) {
   const pfp = (
     <Image
       src={pfpPath}
@@ -43,9 +49,7 @@ export default function TestimonialCard({
       justifyContent="flex-start"
       alignItems="center"
       width="100%"
-      grow="1"
-      shrink="1"
-      basis="0"
+      flex="1"
       position="relative"
       border="1px SOLID rgba(232,236,240,1)"
       padding={{base: "10px 10px 10px 10px", small: "23px 23px 23px 23px"}}

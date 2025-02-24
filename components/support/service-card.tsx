@@ -19,7 +19,7 @@ export default function ServiceCard({ icon, title, description }: ServiceCardPro
       shrink="1"
       basis="0"
       position="relative"
-      padding="0px 16px 0px 16px"
+      padding="0px 20px 0px 20px"
     >
       {/* <Flex width="96px" height="96px" shrink="0" position="relative"> */}
         {icon}

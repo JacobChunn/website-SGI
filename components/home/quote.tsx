@@ -10,6 +10,7 @@ import { contactText, ContactTextType } from '@/app/actions/contact-text';
 import "@/app/app.css"
 import ThankYouModal from '../thank-you-modal';
 import ContactForm from '../contact-form';
+import SectionTitle from '../section-title';
 
 Amplify.configure(outputs, {
   ssr: true // required when using Amplify with Next.js
@@ -33,56 +34,10 @@ export default function Quote() {
 
 
       {/* Title */}
-      <Flex
-        gap="48px"
-        direction="column"
-        justifyContent="flex-start"
-        alignItems="flex-start"
-        shrink="0"
-        alignSelf="stretch"
-        position="relative"
-      >
-        <Flex
-          gap="8px"
-          direction="column"
-          justifyContent="flex-start"
-          alignItems="center"
-          shrink="0"
-          alignSelf="stretch"
-          position="relative"
-        >
-          <Text
-            //fontFamily="Roboto"
-            fontSize="42px"
-            fontWeight="700"
-            color="rgba(33,39,42,1)"
-            lineHeight="46.20000076293945px"
-            textAlign="center"
-            display="block"
-            shrink="0"
-            alignSelf="stretch"
-            position="relative"
-            whiteSpace="pre-wrap"
-          >
-            Want a FREE quote?
-          </Text>
-        </Flex>
-        <Text
-          //fontFamily="Roboto"
-          fontSize="18px"
-          fontWeight="400"
-          color="rgba(33,39,42,1)"
-          lineHeight="25.19999885559082px"
-          textAlign="center"
-          display="block"
-          shrink="0"
-          alignSelf="stretch"
-          position="relative"
-          whiteSpace="pre-wrap"
-        >
-          We are happy to provide information for whatever your construction needs may be.
-        </Text>
-      </Flex>
+      <SectionTitle
+        title="Want a FREE quote?"
+        subtitle="We are happy to provide information for whatever your construction needs may be."
+      />
 
       {/* Form container */}
       <ContactForm/>

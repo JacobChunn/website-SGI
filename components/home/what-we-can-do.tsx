@@ -2,6 +2,7 @@
 import { Flex, Text, Icon } from '@aws-amplify/ui-react';
 import ServiceCard from '@/components/support/service-card';
 import Link from 'next/link';
+import SectionTitle from '../section-title';
 
 export default function WhatWeCanDo() {
   return (
@@ -13,46 +14,14 @@ export default function WhatWeCanDo() {
       justifyContent="flex-start"
       alignItems="center"
       position="relative"
-      padding="80px 80px 80px 80px"
+      padding={{base: "80px 0px 80px 0px", small: "80px 0px 80px 0px", medium: "80px 10px 80px 10px", large: "80px 80px 80px 80px"}}
       backgroundColor="rgba(255,255,255,1)"
     >
       {/* Title */}
-      <Flex
-        gap="48px"
-        direction="column"
-        width="100%"
-        //maxWidth="1280px"
-        justifyContent="flex-start"
-        alignItems="flex-start"
-        shrink="0"
-        position="relative"
-      >
-        <Flex
-          gap="8px"
-          direction="column"
-          justifyContent="flex-start"
-          alignItems="center"
-          shrink="0"
-          alignSelf="stretch"
-          position="relative"
-        >
-          <Text
-            fontSize="42px"
-            fontWeight="700"
-            color="rgba(33,39,42,1)"
-            lineHeight="46.20000076293945px"
-            textAlign="center"
-            display="block"
-            shrink="0"
-            alignSelf="stretch"
-            position="relative"
-            whiteSpace="pre-wrap"
-          >
-            What We Can Do For You
-          </Text>
-        </Flex>
-      </Flex>
-
+      <SectionTitle
+        title='What We Can Do For You'
+      />
+      
       {/* First two cards container */}
       <Flex
         gap="48px"
