@@ -100,7 +100,7 @@ export default function WhatWeCanDo() {
             />
           }
           title="Licensed Residential Builder"
-          description="As a licensed residential builder in Michigan, we\'re equipped to handle your construction needs with precision and compliance. From structural updates to FHA-required fixes, you can trust us to get the job done right."
+          description="As a licensed residential builder in Michigan, we're equipped to handle your construction needs with precision and compliance. From structural updates to FHA-required fixes, you can trust us to get the job done right."
         />
 
         {/* 4th card */}
@@ -120,7 +120,7 @@ export default function WhatWeCanDo() {
             />
           }
           title="Quick Fixes for Closings"
-          description="Are you a Realtor and need to close a deal fast? We specialize in quick, affordable repairs to keep your closing on track. Whether it's windows, siding, or other construction needs, we\'re here to help realtors and homeowners move forward."
+          description="Are you a Realtor and need to close a deal fast? We specialize in quick, affordable repairs to keep your closing on track. Whether it's windows, siding, or other construction needs, we're here to help realtors and homeowners move forward."
         />
       </Flex>
     </Flex>
